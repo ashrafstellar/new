@@ -1110,11 +1110,26 @@ let conversionRate = 1; // default: no conversion
 
 // Detect user location based on browser language (for demo purposes)
 function detectUserLocation() {
-  if (navigator.language && navigator.language.includes('en-IN')) {
-    isIndianUser = true;
-  } else {
-    isIndianUser = false;
-  }
+    return fetch("https://ipapi.co/json/")
+    .then(response => response.json())
+    .then(data => {
+      if (data && data.country_code === "IN") {
+        isIndianUser = true;
+        conversionRate = fetchConversionRate();
+      } else {
+        isIndianUser = false;
+      }
+    })
+    .catch(err => {
+      console.error("Could not fetch IP location. Falling back to browser language.", err);
+      // Fallback to checking the browser's language if the IP lookup fails
+      if (navigator.language && navigator.language.includes("en-IN")) {
+        isIndianUser = true;
+        conversionRate = fetchConversionRate();
+      } else {
+        isIndianUser = false;
+      }
+    });
 }
 
 // Get the current USD to INR conversion rate
@@ -1746,6 +1761,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Expose cartManager for HTML event handlers.
   window.cartManager = cartManager;
 });
+
 
 </script>
 </body>
