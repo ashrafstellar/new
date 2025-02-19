@@ -1,0 +1,1730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stellar Digital Tech - Web Design & Digital Marketing Experts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+        
+    <header class="sticky-header">
+        <div class="logo"><a href='/' style='    font-size: 1.5rem; font-weight: bold; color: #000;'>Stellar</a></div>
+          <nav>
+            <ul>
+              
+              
+              <li><a href='/about'>About</a></li>
+              
+             
+             
+              
+            </ul>
+          </nav>
+          <div class="cart-icon" onclick="toggleCart()">
+            🛒 <span id="cart-count">0</span>
+        </div>
+      
+          <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
+          <a href="tel:+1 8 3333 1111 8" class="link-primary">Call Us</a>
+      </header>
+
+      <div class="menu-overlay" id="menuOverlay">
+        <button class="close-btn" onclick="toggleMenu()">✕</button>
+        <ul>
+          
+              <li><a href="about.html">About</a></li>
+            
+            
+         
+        
+          
+        </ul>
+      </div>
+      <script defer>function toggleMenu() {
+        const menuOverlay = document.getElementById('menuOverlay');
+        menuOverlay.classList.toggle('open');
+      }
+      </script>
+
+      <!-- Cart Modal -->
+<div class="cart-modal" id="cartModal">
+    <div class="cart-content">
+        <div  class="card-content-hs">
+            <h3>Your Cart</h3> <span onclick="toggleCart()" class="close-cart">×</span>
+        </div>
+        
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-total">Total: $<span id="cartTotal">0</span></div>
+        <button class="checkout-btn" onclick="checkout()">Checkout</button>
+    </div>
+</div>
+    
+        <!-- Hero Section -->
+<section class="hero">
+    <!-- Upper Hero Section -->
+    <div class="upper-hero">
+        <div class="hero-content">
+            <h1>Transform Your Digital Vision into Reality</h1>
+            
+            <section class="main-section">
+                <div class="main-form">
+                  <form id="multiStepForm" class="card">
+                    <!-- Step 1: Describe Project -->
+                    <fieldset class="active">
+                      <input type="text"
+                        id="text-input" 
+                        class="text-input" 
+                        placeholder="Tell us about your requirement!" 
+                        name="idea" 
+                        required
+                      >
+                    </fieldset>
+              
+                    <!-- Step 2: Name -->
+                    <fieldset>
+                      <div class="contact-inputs">
+                        <div class="input-container">
+                          <img src="img/person_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="Name" class="input-icon">
+                          <input 
+                            type="text" 
+                            placeholder="Full Name*" 
+                            name="name" 
+                            class="contact-input"
+                            required
+                          >
+                        </div>
+                      </div>
+                    </fieldset>
+              
+                    <!-- Step 3: Contact Information -->
+                    <fieldset>
+                      <div class="contact-inputs">
+                        <div class="input-container">
+                          <img src="img/mail_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="Email" class="input-icon">
+                          <input 
+                            type="email" 
+                            placeholder="Email address*" 
+                            name="email" 
+                            class="contact-input"
+                            required
+                          >
+                        </div>
+                        <div class="input-container">
+                          <img src="img/phone-call.png" alt="Phone" class="input-icon">
+                          <input  
+                            type="tel" 
+                            placeholder="Phone number*" 
+                            name="phone" 
+                            class="contact-input"
+                            required minlength="10" maxlength="12"
+                          >
+                        </div>
+                      </div>
+                    </fieldset>
+              
+                    <!-- Step 4: Additional Information -->
+                    <fieldset>
+                      <textarea
+                        class="text-input"
+                        name="additional_info"
+                        placeholder="Anything else you want to add before we start this journey?"
+                        rows="4"
+                      ></textarea>
+                    </fieldset>
+              
+                    <!-- ... rest of your existing buttons and controls ... -->
+              
+                     <!-- Fixed Left Buttons -->
+                     <div class="card-ii">
+                      <div class="buttons">
+                        
+                      
+                        <label class="btn">
+                          <a href="tel:+1 833 331 1118" style="color: #000; text-decoration: none;"> 
+                          <input type="radio" name="option" value="reason" />
+                          <img src="img/phone-call.png" alt="Phone Icon" />
+                          +1 8 3333 1111 8
+                          
+                          </a>
+                        </label>
+                        <label class="btn">
+                          <a href="mailto:hello@stellardigitech.com" style="color: #000; text-decoration: none;"> 
+                          <input type="radio" name="option" value="reason" />
+                          <img src="img/folder (1).png" alt="Search Icon" />
+                          hello@stellardigitech.com
+                          
+                          </a>
+                        </label>
+                      </div>
+              
+                      <!-- Single Next/Submit Button -->
+                      <button type="button" class="arrow-btn" id="nextBtn">
+                        <img
+                          src="img/arrow_upward_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24 (1).png"
+                          alt="Next"
+                        />
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </section>
+              
+              <div id="successAnimation">
+                        
+                <p
+                  id="successMessage"
+                  style="    font-size: 18px;
+                  color: rgb(51, 51, 51);
+                  margin-top: 15px;
+                  display: block;
+                  width: 300px;
+                  margin: 34px auto;
+                  background-color: #fff;
+                  padding: 14px;
+                  border-radius: 14px;
+                  border: 1px solid;"
+                >
+                  🎉 Thank you! Our representative will be in touch very soon!
+                </p>
+              </div>
+        </div>
+    </div>
+
+   
+
+    <style>
+        .ticker-container {
+            width: 100%;
+            overflow: hidden;
+            background: #fff;
+            color: gray;
+            padding: 0px 0;
+            position: fixed;
+            top: 0;
+            white-space: nowrap;
+        }
+
+        .ticker-content {
+            display: inline-block;
+    animation: scroll 320s linear infinite;
+    padding-left: 100%;
+    font-size: 12px;
+    color: #1a4314;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ticker-container">
+        <div class="ticker-content">
+
+
+            +1 8 3333 1111 8 | hello@stellardigitech.com | www.stellardigitech.com |            +1 8 3333 1111 8 | hello@stellardigitech.com | www.stellardigitech.com |
+            +1 8 3333 1111 8 | hello@stellardigitech.com | www.stellardigitech.com |
+            +1 8 3333 1111 8 | hello@stellardigitech.com | www.stellardigitech.com |
+            +1 8 3333 1111 8 | hello@stellardigitech.com | www.stellardigitech.com |
+            +1 8 3333 1111 8 | hello@stellardigitech.com | www.stellardigitech.com |
+            +1 8 3333 1111 8 | hello@stellardigitech.com | www.stellardigitech.com |
+            +1 8 3333 1111 8 | hello@stellardigitech.com | www.stellardigitech.com |
+
+        </div>
+    </div>
+
+    <script>
+        // Clone the content to create seamless loop
+        window.addEventListener('DOMContentLoaded', () => {
+            const tickerContent = document.querySelector('.ticker-content');
+            const contentClone = tickerContent.cloneNode(true);
+            tickerContent.parentNode.appendChild(contentClone);
+        });
+    </script>
+        
+
+
+  
+</section>
+<style>
+    .whatsapp-section {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        max-width: 1200px;
+        margin: 2rem auto;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+    
+    .container {
+        display: flex;
+        height: 75vh;
+        background: var(--background-light);
+    }
+    
+    /* Left Panel */
+    .left-panel {
+        width: 30%;
+        background: var(--sidebar-bg); /* Updated sidebar background */
+        border-right: 1px solid rgba(0,0,0,0.08);
+    
+        display: flex;
+      flex-direction: column;
+      height: 100%; /* Match container height */
+    }
+    
+    
+    .search-bar input {
+        width: 100%;
+        padding: 12px 20px;
+        border: none;
+        background: var(--background-light);
+        border-radius: 8px;
+        margin: 10px;
+        font-size: 0.9em;
+    }
+    
+    .service-item {
+        display: flex;
+        align-items: center;
+        padding: 12px 16px;
+        cursor: pointer;
+        transition: background 0.2s ease;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .service-item:hover {
+        background: rgba(0,0,0,0.03);
+    }
+    
+    .service-item.active {
+        background: rgba(0,0,0,0.05);
+    }
+    
+    .service-avatar {
+        width: 49px;
+        height: 49px;
+        border-radius: 50%;
+        margin-right: 15px;
+        object-fit: cover;
+        border: 2px solid rgba(0,0,0,0.05);
+    }
+    
+    .service-meta {
+        flex: 1;
+    }
+    
+    .service-meta strong {
+        font-weight: 500;
+        color: #111b21;
+        font-size: 1em;
+        display: block;
+        margin-bottom: 2px;
+    }
+    
+    .service-meta div {
+        font-size: 0.875em;
+        color: #1a4314;
+        line-height: 1.4;
+    }
+    
+    /* Right Panel */
+    
+    
+    .right-panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .chat-header {
+        background: #f0f2f5;
+        padding: 14px 20px;
+        border-bottom: 1px solid rgba(0,0,0,0.08);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .profile-info {
+        display: flex;
+        align-items: center;
+    }
+    
+    .service-name {
+        font-weight: 500;
+        font-size: 1.1em;
+        margin: 0;
+        color: #111b21;
+    }
+    
+    .service-status {
+        font-size: 0.8em;
+        color: var(--secondary-color);
+        margin: 2px 0 0;
+    }
+    
+    .chat-messages {
+        background: 
+            linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)),
+            var(--chat-bg-image);
+        background-size: cover;
+        background: url(img/social-media-sketch-vector-seamless-600nw-1660950727\ \(1\).webp);
+        background-position: center;
+    }
+    
+    .message {
+        max-width: 65%;
+        margin: 0px 0;
+        padding: 0px 12px;
+        border-radius: 8px;
+        position: relative;
+        opacity: 0;
+        animation: fadeIn 0.3s forwards;
+        font-size: 0.95em;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+        width: 65%;
+        max-width: 65%;}
+    
+    .message.service {
+        background: var(--message-service);
+        margin-right: auto;
+        border-top-left-radius: 2px;
+        margin-bottom: 8px;
+
+    }
+    
+    .message.user {
+        background: var(--message-user);
+        margin-left: auto;
+        border-top-right-radius: 2px;
+        margin-bottom: 8px;
+    }
+    
+    .timestamp {
+        font-size: 0.75em;
+        color: var(--secondary-color);
+        text-align: right;
+        margin-top: 4px;
+    }
+    
+    .encryption-notice {
+        text-align: center;
+        padding: 20px 0;
+        color: var(--secondary-color);
+        font-size: 0.8em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        display: none;
+    }
+    
+    @media (max-width: 768px) {
+        .container {
+            height: 90vh;
+        }
+        
+        .service-avatar {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .chat-messages {
+            padding: 15px 4%;
+        }
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    
+    
+    /* Message input field */
+    .chat-input {
+        padding: 15px 20px;
+        background: #ffffff;
+        border-top: 1px solid #e9edef;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    .input-wrapper {
+        flex: 1;
+        background: #f0f2f5;
+        border-radius: 8px;
+        padding: 9px 12px;
+    }
+    
+    .chat-input textarea {
+        width: 100%;
+        border: none;
+        background: transparent;
+        resize: none;
+        font-family: inherit;
+        font-size: 0.95em;
+        padding: 4px 0;
+    }
+    
+    .chat-input button {
+        background: var(--primary-color);
+        border: none;
+        color: white;
+        padding: 8px 15px;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+    
+    /* Adjust chat messages height */
+    .chat-messages {
+        flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+    }
+    
+    .services-list {
+      flex: 1;
+      overflow-y: auto;
+    }
+
+    .message.service{
+        border-bottom: 8px;
+    }
+
+    .message.user{
+        border-bottom: 8px;
+    }
+    </style>
+<section class="whatsapp-section">
+    <div class="container">
+        <div class="left-panel">
+            <div class="header">
+                <div class="search-bar">
+                    <h4 style="padding: 2px 5px; border-radius: 4px;background-color: gray;">Our Services</h4>
+                </div>
+            </div>
+            <div class="services-list" id="servicesList"></div>
+        </div>
+        
+        <div class="right-panel">
+            <div class="chat-header" id="chatHeader">
+                <div class="profile-info">
+                    <img class="service-avatar" src="" alt="Service Avatar">
+                    <div class="service-meta">
+                        <h2 class="service-name"></h2>
+                        <p class="service-status" id="service-status-description"></p>
+                    </div>
+                </div>
+                <div style="    display: flex
+                ;
+                    gap: 15px;
+                    align-items: anchor-center;"> <img style="    width: 22px;
+                    height: fit-content; margin-top: 6px;" src="img/quickreply_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png" alt="support"><div><a href="/" style="    font-size: 1.5rem; font-weight: bold; color: #000;">Stellar</a></div></div>
+               
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="encryption-notice">
+                    <div class="lock-icon">🔒</div>
+                    <p>Messages are end-to-end encrypted</p>
+                </div>
+                
+            </div><div class="card" style="width: -webkit-fill-available; justify-content: space-between;">
+                <div class="service-cart-selector" id="service-cart-selector"></div>
+                <div style="display: flex; gap: 20px;" class="service-cart-button" id="service-cart-button"></div>
+            </div>
+            
+        </div>
+    </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+    // Updated JavaScript with images
+    const services = {
+    
+    
+        
+       "web-dev": {
+      name: "Web Development & Design",
+      image: "web-dev-avatar.png",
+      price: "$123.45",
+      id: 1,
+      lastMessage: "Transform your idea into a digital asset - website.",
+      timestamp: "2/19/2025",
+      messages: [
+        {type : "user" ,text : "Hi, I heard about Stellar from a friend of mine, i need a websitefor my caffe", time: "09:00" },
+        
+        { type: "service", text: `
+        
+        <ol>
+            <strong>Website Development & Designing Services</strong>
+      <li>🎨 <strong>Custom Homepage Design</strong><br>Showcase your café's vibe.</li>
+      <li>📄 <strong>Up to 5 Pages</strong><br>Home, Menu, About, Contact & More.</li>
+      <li>📱 <strong>Responsive Layout</strong><br>Optimized for mobile & desktop.</li>
+      <li>📍 <strong>Google Map Integration</strong><br>Easy-to-find location.</li>
+      <li>💌 <strong>Contact Form</strong><br>Engage customers securely.</li>
+      <li>🔍 <strong>SEO Ready</strong><br>Boost your online visibility.</li>
+      <li>⚡ <strong>Live Chat Support</strong><br>Instant help when needed.</li>
+    </ol>
+    
+    
+     `, time: "09:02" },
+        { type: "user", text: "That sounds impressive. How much will it cost me?", time: "09:03" },
+        { type: "service", text: `That will cost $123.45`, time: "09:04" },
+
+
+    
+        
+      ]
+    }
+    ,
+    "digital-marketing": {
+      name: "Digital Marketing",
+      image: "digital-marketing-avatar.png",
+      price: "$47.00",
+      id: 2,
+      lastMessage: "Amplify your brand's reach and engagement online",
+      timestamp: "2/19/2025",
+      messages: [
+        {type: "user", text: "Hi, I want to increase sales for my online store", time: "09:00"},
+        {type: "service", text: `
+        <ol>
+            <strong>Digital Marketing Services</strong>
+            <li>📈 <strong>Social Media Strategy</strong><br>Platform-specific campaigns</li>
+            <li>📧 <strong>Email Campaigns</strong><br>Targeted customer outreach</li>
+            <li>🎯 <strong>Audience Analytics</strong><br>Data-driven targeting</li>
+            <li>📊 <strong>ROI Tracking</strong><br>Performance dashboards</li>
+            <li>📹 <strong>Video Marketing</strong><br>YouTube & social ads</li>
+            <li>🤝 <strong>Influencer Partnerships</strong><br>Brand ambassador programs</li>
+        </ol>
+        `, time: "09:02"},
+        {type: "user", text: "What's the investment required?", time: "09:03"},
+        {type: "service", text: `That will cost $47.00`, time: "09:04"}
+      ]
+  },
+
+  "seo-optimization": {
+      name: "SEO Optimization",
+      image: "seo-optimization-avatar.png",
+      price: "$77.00",
+      id: 3,
+      lastMessage: "Dominate search rankings organically",
+      timestamp: "2/19/2025",
+      messages: [
+        {type: "user", text: "My website isn't showing up in Google searches", time: "09:00"},
+        {type: "service", text: `
+        <ol>
+            <strong>SEO Services</strong>
+            <li>🔎 <strong>Keyword Research</strong><br>High-value search terms</li>
+            <li>📝 <strong>Content Optimization</strong><br>Search-friendly copy</li>
+            <li>📈 <strong>Rank Tracking</strong><br>Weekly position reports</li>
+            <li>🔗 <strong>Backlink Building</strong><br>Authority link acquisition</li>
+            <li>🚀 <strong>Technical SEO</strong><br>Site speed optimization</li>
+            <li>📊 <strong>Competitor Analysis</strong><br>Gap identification</li>
+        </ol>
+        `, time: "09:02"},
+        {type: "user", text: "What's the pricing for this?", time: "09:03"},
+        {type: "service", text: `That will cost $77.00`, time: "09:04"}
+      ]
+  },
+
+  // Continuing with same pattern for other services...
+
+  "social-media-management": {
+      name: "Social Media Management",
+      image: "social-media-management-avatar.png",
+      price: "$187.00",
+      id: 4,
+      lastMessage: "Build authentic connections with your audience",
+      timestamp: "2/19/2025",
+      messages: [
+        {type: "user", text: "I need help managing my company's social presence", time: "09:00"},
+        {type: "service", text: `
+        <ol>
+            <strong>Social Media Services</strong>
+            <li>📅 <strong>Content Calendar</strong><br>Strategic posting schedule</li>
+            <li>💬 <strong>Community Management</strong><br>24/7 comment monitoring</li>
+            <li>📸 <strong>Visual Storytelling</strong><br>Eye-catching graphics</li>
+            <li>📈 <strong>Performance Reports</strong><br>Monthly analytics review</li>
+            <li>🎥 <strong>Reels/Stories Creation</strong><br>Trending format content</li>
+        </ol>
+        `, time: "09:02"},
+        {type: "user", text: "What's the cost for this service?", time: "09:03"},
+        {type: "service", text: `That will cost $187.00`, time: "09:04"}
+      ]
+  },
+
+  "content-writing": {
+      name: "Content Writing",
+      image: "content-writing-avatar.png",
+      price: "$11.00",
+      id: 5,
+      lastMessage: "Captivate audiences with compelling copy",
+      timestamp: "2/19/2025",
+      messages: [
+        {type: "user", text: "I need engaging content for my blog", time: "09:00"},
+        {type: "service", text: `
+        <ol>
+            <strong>Content Services</strong>
+            <li>✍️ <strong>Blog Posts</strong><br>SEO-optimized articles</li>
+            <li>📖 <strong>Whitepapers</strong><br>In-depth industry reports</li>
+            <li>📢 <strong>Press Releases</strong><br>Media-ready announcements</li>
+            <li>📧 <strong>Email Sequences</strong><br>Conversion-focused copy</li>
+            <li>📱 <strong>Social Media Captions</strong><br>Platform-specific tone</li>
+        </ol>
+        `, time: "09:02"},
+        {type: "user", text: "What's the pricing structure?", time: "09:03"},
+        {type: "service", text: `That will cost $11.00`, time: "09:04"}
+      ]
+  },
+
+  // Pattern continues through all 15 services with similar structure...
+
+  "graphic-design": {
+      name: "Graphic Design",
+      image: "graphic-design-avatar.png",
+      price: "$234.00",
+      id: 6,
+      lastMessage: "Bring your brand to life with visual storytelling",
+      timestamp: "2/19/2025",
+      messages: [
+        {type: "user", text: "I need professional visuals for my startup", time: "09:00"},
+        {type: "service", text: `
+        <ol>
+            <strong>Graphic Design Services</strong>
+            <li>🎨 <strong>Brand Identity Kit</strong><br>Logo + color palette + typography</li>
+            <li>📄 <strong>Marketing Materials</strong><br>Brochures, flyers & business cards</li>
+            <li>📱 <strong>Social Media Templates</strong><br>Ready-to-post graphic sets</li>
+            <li>📦 <strong>Product Packaging</strong><br>Retail-ready box designs</li>
+            <li>🖼️ <strong>Digital Illustrations</strong><br>Custom artwork creation</li>
+        </ol>
+        `, time: "09:02"},
+        {type: "user", text: "What's the investment for this package?", time: "09:03"},
+        {type: "service", text: `That will cost $234.00`, time: "09:04"}
+      ]
+  },
+
+  "ecommerce-setup": {
+      name: "E-commerce Store Setup",
+      image: "ecommerce-setup-avatar.png",
+      price: "$567.00",
+      id: 7,
+      lastMessage: "Launch your online store in record time",
+      timestamp: "2/19/2025",
+      messages: [
+        {type: "user", text: "I want to sell products online", time: "09:00"},
+        {type: "service", text: `
+        <ol>
+            <strong>E-commerce Services</strong>
+            <li>🛒 <strong>Platform Setup</strong><br>Shopify/WooCommerce configuration</li>
+            <li>💳 <strong>Payment Gateway</strong><br>Stripe/PayPal integration</li>
+            <li>📦 <strong>Product Upload</strong><br>Up to 50 SKUs included</li>
+            <li>📱 <strong>Mobile-Optimized</strong><br>Seamless shopping experience</li>
+            <li>🔒 <strong>SSL Security</strong><br>PCI-compliant checkout</li>
+        </ol>
+        `, time: "09:02"},
+        {type: "user", text: "What's the total cost?", time: "09:03"},
+        {type: "service", text: `That will cost $567.00`, time: "09:04"}
+      ]
+  },
+
+  "mobile-app-dev": {
+      name: "Mobile App Development",
+      image: "mobile-app-dev-avatar.png",
+      price: "$678.00",
+      id: 8,
+      lastMessage: "Create native mobile experiences",
+      timestamp: "2/19/2025",
+      messages: [
+        {type: "user", text: "Need an app for both iOS and Android", time: "09:00"},
+        {type: "service", text: `
+        <ol>
+            <strong>App Development Services</strong>
+            <li>📱 <strong>Cross-Platform</strong><br>React Native development</li>
+            <li>🔐 <strong>User Authentication</strong><br>Social login integration</li>
+            <li>📊 <strong>Analytics Dashboard</strong><br>User behavior tracking</li>
+            <li>🛒 <strong>In-App Purchases</strong><br>Digital product sales</li>
+            <li>🔔 <strong>Push Notifications</strong><br>Engagement features</li>
+        </ol>
+        `, time: "09:02"},
+        {type: "user", text: "What's the pricing for this?", time: "09:03"},
+        {type: "service", text: `That will cost $678.00`, time: "09:04"}
+      ]
+  },
+
+  "email-marketing": {
+      name: "Email Marketing",
+      image: "email-marketing-avatar.png",
+      price: "$123.00",
+      id: 9,
+      lastMessage: "Nurture leads with automated campaigns",
+      timestamp: "2/19/2025",
+      messages: [
+        {type: "user", text: "Need to improve email conversions", time: "09:00"},
+        {type: "service", text: `
+        <ol>
+            <strong>Email Services</strong>
+            <li>📧 <strong>Campaign Strategy</strong><br>Drip sequence planning</li>
+            <li>✉️ <strong>Template Design</strong><br>Mobile-responsive layouts</li>
+            <li>📊 <strong>A/B Testing</strong><br>Subject line optimization</li>
+            <li>📈 <strong>Analytics Tracking</strong><br>Open/click rate monitoring</li>
+            <li>🤖 <strong>Automation Setup</strong><br>Trigger-based emails</li>
+        </ol>
+        `, time: "09:02"},
+        {type: "user", text: "What's the cost structure?", time: "09:03"},
+        {type: "service", text: `That will cost $123.00`, time: "09:04"}
+      ]
+  },
+
+  "ppc-advertising": {
+      name: "PPC Advertising",
+      image: "ppc-advertising-avatar.png",
+      price: "$97.00",
+      id: 10,
+      lastMessage: "Drive instant traffic with targeted ads",
+      timestamp: "2/19/2025",
+      messages: [
+        {type: "user", text: "Want to run Google/Facebook ads", time: "09:00"},
+        {type: "service", text: `
+        <ol>
+            <strong>PPC Services</strong>
+            <li>🎯 <strong>Audience Targeting</strong><br>Demographic filtering</li>
+            <li>📈 <strong>Ad Creation</strong><br>Compelling copy & visuals</li>
+            <li>💰 <strong>Budget Management</strong><br>Daily spend optimization</li>
+            <li>📊 <strong>Conversion Tracking</strong><br>ROI measurement</li>
+            <li>🔄 <strong>Ad Rotation</strong><br>Variation testing</li>
+        </ol>
+        `, time: "09:02"},
+        {type: "user", text: "What's the investment needed?", time: "09:03"},
+        {type: "service", text: `That will cost $97.00`, time: "09:04"}
+      ]
+  },
+
+  "logo-design": {
+      name: "Logo Design",
+      image: "logo-design-avatar.png",
+      price: "$44.00",
+      id: 11,
+      lastMessage: "Create a memorable brand identity",
+      timestamp: "2/19/2025",
+      messages: [
+        {type: "user", text: "Need a professional logo", time: "09:00"},
+        {type: "service", text: `
+        <ol>
+            <strong>Logo Services</strong>
+            <li>🎨 <strong>3 Concepts</strong><br>Initial design proposals</li>
+            <li>✏️ <strong>Unlimited Revisions</strong><br>Until you're satisfied</li>
+            <li>📁 <strong>File Formats</strong><br>PNG, JPEG, SVG, PDF</li>
+            <li>🎭 <strong>Color Variations</strong><br>Light/dark versions</li>
+            <li>📝 <strong>Style Guide</strong><br>Usage recommendations</li>
+        </ol>
+        `, time: "09:02"},
+        {type: "user", text: "What's the pricing?", time: "09:03"},
+        {type: "service", text: `That will cost $44.00`, time: "09:04"}
+      ]
+  },
+
+  "uiux-design": {
+      name: "UI/UX Design",
+      image: "uiux-design-avatar.png",
+      price: "$12.00",
+      id: 12,
+      lastMessage: "Craft intuitive user experiences",
+      timestamp: "2/19/2025",
+      messages: [
+        {type: "user", text: "Need to improve app usability", time: "09:00"},
+        {type: "service", text: `
+        <ol>
+            <strong>UI/UX Services</strong>
+            <li>📱 <strong>Wireframing</strong><br>Low-fidelity prototypes</li>
+            <li>🎨 <strong>Visual Design</strong><br>Pixel-perfect mockups</li>
+            <li>🧭 <strong>User Flow</strong><br>Journey mapping</li>
+            <li>📊 <strong>Usability Testing</strong><br>User feedback sessions</li>
+            <li>📚 <strong>Design System</strong><br>Component library</li>
+        </ol>
+        `, time: "09:02"},
+        {type: "user", text: "What's the cost estimate?", time: "09:03"},
+        {type: "service", text: `That will cost $12.00`, time: "09:04"}
+      ]
+  },
+
+  "video-editing": {
+      name: "Video Editing",
+      image: "video-editing-avatar.png",
+      price: "$123.00",
+      id: 13,
+      lastMessage: "Transform raw footage into polished content",
+      timestamp: "2/19/2025",
+      messages: [
+        {type: "user", text: "Need editing for product demo videos", time: "09:00"},
+        {type: "service", text: `
+        <ol>
+            <strong>Video Services</strong>
+            <li>✂️ <strong>Trimming & Cutting</strong><br>Remove unwanted footage</li>
+            <li>🎞️ <strong>Transitions</strong><br>Professional scene changes</li>
+            <li>🎵 <strong>Sound Design</strong><br>Music & SFX integration</li>
+            <li>📹 <strong>Color Grading</strong><br>Visual style enhancement</li>
+            <li>📦 <strong>Multi-Format Export</strong><br>MP4, MOV, AVI</li>
+        </ol>
+        `, time: "09:02"},
+        {type: "user", text: "What's the pricing structure?", time: "09:03"},
+        {type: "service", text: `That will cost $123.00`, time: "09:04"}
+      ]
+  },
+
+  "business-consulting": {
+      name: "Business Consulting",
+      image: "business-consulting-avatar.png",
+      price: "$910.00",
+      id: 14,
+      lastMessage: "Strategic guidance for business growth",
+      timestamp: "2/19/2025",
+      messages: [
+        {type: "user", text: "Need help scaling my business", time: "09:00"},
+        {type: "service", text: `
+        <ol>
+            <strong>Consulting Services</strong>
+            <li>📈 <strong>Business Planning</strong><br>5-year roadmap</li>
+            <li>💰 <strong>Financial Modeling</strong><br>Revenue projections</li>
+            <li>📊 <strong>Market Analysis</strong><br>Competitor benchmarking</li>
+            <li>🤝 <strong>Partnership Strategy</strong><br>Alliance development</li>
+            <li>📑 <strong>Operational Audit</strong><br>Process optimization</li>
+        </ol>
+        `, time: "09:02"},
+        {type: "user", text: "What's the investment required?", time: "09:03"},
+        {type: "service", text: `That will cost $910.00`, time: "09:04"}
+      ]
+  },
+
+  "crm-setup": {
+      name: "CRM Setup & Integration",
+      image: "crm-setup-avatar.png",
+      price: "$1210.00",
+      id: 15,
+      lastMessage: "Streamline customer relationships",
+      timestamp: "2/19/2025",
+      messages: [
+        {type: "user", text: "Need CRM system for sales team", time: "09:00"},
+        {type: "service", text: `
+        <ol>
+            <strong>CRM Services</strong>
+            <li>🛠️ <strong>System Selection</strong><br>HubSpot/Salesforce/Zoho</li>
+            <li>📥 <strong>Data Migration</strong><br>Legacy system transfer</li>
+            <li>🤖 <strong>Automation</strong><br>Lead nurturing workflows</li>
+            <li>📊 <strong>Reporting</strong><br>Custom dashboards</li>
+            <li>🔗 <strong>API Integration</strong><br>3rd party app connections</li>
+        </ol>
+        `, time: "09:02"},
+        {type: "user", text: "What's the total cost?", time: "09:03"},
+        {type: "service", text: `That will cost $1210.00`, time: "09:04"}
+      ]
+  }
+    };
+    
+    function initServices() {
+        const list = document.getElementById('servicesList');
+        Object.keys(services).forEach(key => {
+            const service = document.createElement('div');
+            service.className = 'service-item';
+            service.innerHTML = `
+                <img class="service-avatar" src="${services[key].image}" alt="${services[key].name}">
+                <div class="service-meta">
+                    <strong>${services[key].name}</strong>
+                    <div>${services[key].lastMessage}</div>
+                    <div class="timestamp">${services[key].price}</div>
+                </div>
+            `;
+            service.addEventListener('click', () => loadService(key));
+            list.appendChild(service);
+        });
+
+
+        loadService('ppc-advertising');
+    }
+    
+    function loadService(serviceKey) {
+        const service = services[serviceKey];
+        const chatHeader = document.getElementById('chatHeader');
+        const chatMessages = document.getElementById('chatMessages');
+        
+        // Update header
+        chatHeader.querySelector('.service-avatar').src = service.image;
+        chatHeader.querySelector('.service-name').textContent = service.name;
+        
+        // Clear messages
+        chatMessages.innerHTML = '<div class="encryption-notice"><div class="lock-icon">🔒</div><p>Messages are end-to-end encrypted</p></div>';
+        
+        // Add messages
+        service.messages.forEach(msg => {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${msg.type}`;
+            messageDiv.innerHTML = `
+                <div style="    display: flex
+    ;
+        justify-content: space-between;"><p>${msg.text}</p><p class="timestamp">${msg.time}</p></div>
+                
+            `;
+
+            const serviceCart = document.getElementById("service-cart-selector")
+            const serviceCartButton = document.getElementById("service-cart-button")
+            document.getElementById("service-status-description").innerText = service.lastMessage 
+            serviceCartButton.innerHTML = `${service.price} <button class="add-to-cart" onclick="addToCart(${service.id})">Add to Cart</button>`
+            serviceCart.innerText = `${service.name}`
+            chatMessages.appendChild(messageDiv);
+
+          
+        });
+        
+        
+      
+        // Set active state
+        document.querySelectorAll('.service-item').forEach(item => 
+            item.classList.remove('active'));
+        event.currentTarget.classList.add('active');
+    }
+    
+    document.addEventListener('DOMContentLoaded', initServices);
+    </script>
+    <style>
+        :root {
+    --primary-color: #25D366;
+    --secondary-color: #667781;
+    --background-light: #f0f2f5;
+    --message-user: #DCF8C6;
+    --message-service: #FFFFFF;
+}
+    </style>
+
+
+
+<!--
+<hr style="width: 80%; margin: 10px auto; color: #333">
+<section class="about">
+    <div class="about-content">
+        <span class="about-span">Innovate</span>
+        <h2>Expert Web Development & Design Solutions</h2>
+        <p>
+            At Stellar Digital Tech, we build responsive, SEO-optimized websites that captivate your audience and boost search engine rankings. Our creative team combines cutting-edge design with powerful development to deliver user-friendly sites that drive engagement and growth.
+        </p>
+        <div class="about-services">
+            <div class="about-web-dev"></div>
+            <div class="about-digtal-m"></div>
+        </div>
+        <div class="about-buttons">
+            <a class="link-primary" href="#">Learn More</a>
+            <a class="link-secondary" href="#">Get Started ></a>
+        </div>
+    </div>
+    <div class="about-img">
+        <img src="img/web-design-concept-with-drawings.png" alt="Expert Web Development and Design">
+    </div>
+</section>
+
+<section class="about">
+    <div class="about-img">
+        <img src="img/marketing-online-strategy-with-drawings.png" alt="Digital Marketing Strategy">
+    </div>
+    <div class="about-content">
+        <span class="about-span">Accelerate</span>
+        <h2>Powerful Digital Marketing Strategies</h2>
+        <p>
+            Boost your online visibility with our comprehensive digital marketing services. We specialize in SEO, PPC, social media campaigns, and content marketing to drive targeted traffic and maximize ROI. Let our innovative strategies help you dominate the digital landscape.
+        </p>
+        <div class="about-services">
+            <div class="about-web-dev"></div>
+            <div class="about-digtal-m"></div>
+        </div>
+        <div class="about-buttons">
+            <a class="link-primary" href="#">Discover More</a>
+            <a class="link-secondary" href="#">Start Now ></a>
+        </div>
+    </div>
+</section>
+
+<section class="about">
+    <div class="about-content">
+        <span class="about-span">Optimize</span>
+        <h2>Data-Driven Conversion Optimization</h2>
+        <p>
+            Transform your website into a conversion powerhouse with our analytics and optimization services. Using advanced A/B testing, heatmaps, and user behavior analysis, we fine-tune your site to maximize lead generation and sales. Experience measurable improvements in your conversion rates and customer engagement.
+        </p>
+        <div class="about-services">
+            <div class="about-web-dev"></div>
+            <div class="about-digtal-m"></div>
+        </div>
+        <div class="about-buttons">
+            <a class="link-primary" href="#">See How</a>
+            <a class="link-secondary" href="#">Contact Us ></a>
+        </div>
+    </div>
+    <div class="about-img">
+        <img src="img/32718.png" alt="Data-Driven Conversion Optimization">
+    </div>
+</section>
+
+
+
+        <section class="empower-section">
+            <div class="empower-container">
+                <h1 class="empower-main-heading">Empower</h1>
+                <h2 class="empower-subheading">Transform Your Vision into Digital<br>Reality</h2>
+                
+                <p class="empower-lead">Choosing Stellar Digital Tech means partnering with experts who prioritize your success.</p>
+                <p class="empower-description">Our tailored solutions ensure your business stands out in the digital landscape.</p>
+        
+                <div class="empower-columns">
+                    <div class="empower-column-item">
+                        <h3 class="empower-column-heading">Expertise in Cutting-Edge<br>Technologies</h3>
+                        <p class="empower-column-text">We leverage the latest tools to deliver exceptional</p>
+                        <img>
+                    </div>
+                    
+                    <div class="empower-column-item">
+                        <h3 class="empower-column-heading">Customized Strategies for<br>Every Business</h3>
+                        <p class="empower-column-text">Our solutions are designed to meet your unique</p>
+                        <img>
+                    </div>
+                    
+                    <div class="empower-column-item">
+                        <h3 class="empower-column-heading">Dedicated Support Every<br>Step of the Way</h3>
+                        <p class="empower-column-text">Our tailored solutions ensure your business succeeds</p>
+                        <img>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+
+<section class="services-container">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      
+    </div>
+</section>
+
+<style>
+    
+    /* faq styles start*/
+
+    .faq-heading {
+        text-align: center;
+        font-size: 2em;
+        color: #333333;
+        margin-bottom: 20px;
+      }
+
+      .faq-section{
+        display: flex;
+        justify-content: space-between;
+
+      }
+
+      .faq-img-container {
+        display: flex;
+        justify-content: center;  /* Centers the image horizontally */
+        align-items: center;      /* Centers the image vertically */
+        height: auto;            /* Set a fixed height for the container, or adjust as needed */
+        width: 100%  ;
+        overflow: hidden;            /* Full width */
+      }
+      
+      .faq-img-container img {
+        max-width: 140%;          /* Ensures the image does not exceed the container's width */
+        max-height: 100%;         /* Ensures the image does not exceed the container's height */
+        object-fit: contain;      /* Ensures the image maintains its aspect ratio without stretching */
+      }
+      
+      
+
+
+      .faq-container {
+        width: 85%;
+        max-width: 960px;
+        display: flex
+;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px;
+    padding: 30px;
+      }
+
+      .faq-item {
+        border: 1px solid #000;
+        border-radius: 10px;
+        margin: 10px 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        
+      }
+
+      .faq-question {
+        padding: 14px 20px;
+        cursor: pointer;
+        color: #000;
+        display: flex
+    ;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1em;
+      }
+
+      .faq-answer {
+        max-height: 0;
+        padding: 0 20px;
+        overflow: hidden;
+        background-color: #ffffff;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+        color: #333;
+        font-size: 1em;
+        border-radius: 0 0 10px 10px;
+      }
+
+      .faq-answer p {
+        margin: 20px 0;
+      }
+
+      .faq-item.active .faq-answer {
+        max-height: 280px;
+        padding: 0px 20px;
+        
+      }
+
+      .faq-item.active{
+        border: 2px solid #000;
+        box-shadow: 6px 6px 0px 0px black; /* Extra black border effect */
+      }
+
+      .faq-item.active .faq-question {
+        color: #000;
+        font-weight: 500;
+        
+        
+      }
+
+      
+
+      .faq-item.active .faq-question::after {
+        content: '-';
+       
+      }
+
+      .faq-question::after {
+        content: '+';
+        font-size: 1.5em;
+        color: #000;
+      }
+
+      /* For screens smaller than 1200px (laptops) */
+@media (max-width: 1200px) {
+  .faq-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .faq-container {
+    width: 80%;
+  }
+}
+
+/* For screens smaller than 768px (tablets and smaller laptops) */
+@media (max-width: 768px) {
+  .faq-section {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .faq-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .faq-item {
+    margin: 8px 0;
+  }
+
+  .faq-img-container img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* For screens smaller than 480px (smartphones) */
+@media (max-width: 480px) {
+  .faq-heading {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+
+  .faq-container {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .faq-item {
+    margin: 5px 0;
+  }
+
+  .faq-question {
+    font-size: 0.9em;
+  }
+
+  .faq-answer p {
+    font-size: 0.9em;
+  }
+}
+
+      /* faq styles end */
+</style>
+<section class="faq-section" style="margin: 0 auto;">
+    <div class="faq-container">
+      <h1 class="faq-heading" id="smooth-up-animate">Frequently Asked Questions</h1>
+  
+      <div class="faq-item active" id="smooth-up-animate">
+        <div class="faq-question">What services does Stellar Digi Tech offer?</div>
+        <div class="faq-answer">
+          <p>We specialize in cutting-edge web development and comprehensive digital marketing. Our offerings include custom website design, development, SEO, pay-per-click advertising, social media management, and content strategy—designed to help your business thrive online.</p>
+        </div>
+      </div>
+  
+      <div class="faq-item" id="smooth-up-animate">
+        <div class="faq-question">What does unlimited support include?</div>
+        <div class="faq-answer">
+          <p>Unlimited support means you can request as many website updates or tweaks as needed during your support period. For our Starter plan, you get one month of free support, while our Business plan includes three months. After that, you can easily purchase an additional support package to keep your site up-to-date.</p>
+        </div>
+      </div>
+  
+      <div class="faq-item" id="smooth-up-animate">
+        <div class="faq-question">How does the website development process work?</div>
+        <div class="faq-answer">
+          <p>We start with a detailed consultation to understand your business goals and vision. Then we move through the design, development, and testing phases—ensuring you’re involved every step of the way. This collaborative process guarantees a website that truly represents your brand.</p>
+        </div>
+      </div>
+  
+      <div class="faq-item" id="smooth-up-animate">
+        <div class="faq-question">Will my website be optimized for search engines?</div>
+        <div class="faq-answer">
+          <p>Absolutely. All our websites come with on-page SEO essentials to ensure search engines can index your site properly. For those seeking a competitive edge, we offer advanced SEO and digital marketing packages designed to boost your online visibility.</p>
+        </div>
+      </div>
+  
+      <div class="faq-item" id="smooth-up-animate">
+        <div class="faq-question">How long does it take to build a website?</div>
+        <div class="faq-answer">
+          <p>Depending on your project’s complexity, our website development typically takes between 2 to 6 weeks. More intricate projects might require a longer timeline, but we always strive to deliver quality work on schedule.</p>
+        </div>
+      </div>
+  
+      <div class="faq-item" id="smooth-up-animate">
+        <div class="faq-question">How do I get started with Stellar Digi Tech?</div>
+        <div class="faq-answer">
+          <p>Getting started is simple! Contact us by calling <strong> +1 8 3333 1111 8</strong> or by filling out the contact form on our website. Our team will schedule a consultation to discuss your project requirements and guide you through the next steps.</p>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+  
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', () => {
+            const faqItem = question.parentElement;
+            
+            // Toggle active class on clicked item
+            faqItem.classList.toggle('active');
+            
+            // Close other open items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== faqItem) {
+                    item.classList.remove('active');
+                }
+            });
+        });
+    });
+</script>
+
+-->
+
+
+
+        <section class="testimonials"></section>
+        <footer class="site-footer">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Stellar Digital Tech</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> +1 8 3333 1111 8</p>
+                        <p><i class="fas fa-phone"></i> +91 736 8888 088</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 314 JSR IND 831-001</p>
+                        <p><i class="fas fa-envelope"></i> hello@stellardigitech.com</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/terms.html">Terms & Conditions</a></li>
+                        <li><a href="/policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+        
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="newsletter">
+                        <p>Subscribe to our newsletter</p>
+                        <form>
+                            <input type="email" placeholder="Enter your email">
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="footer-bottom">
+                <p>&copy; 2024 Stellar Digital Tech. All rights reserved. | <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a></p>
+            </div>
+        </footer>
+        
+        <style>
+        .site-footer {
+            background-color: #ffffff; /* White background */
+            color: #000000; /* Black text */
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+        
+        .footer-section h3, .footer-section h4 {
+            color: #1a4314; /* Blue for headers */
+            margin-bottom: 20px;
+        }
+        
+        .contact-info p {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: #1a4314; /* Blue for icons */
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin: 10px 0;
+        }
+        
+        .footer-links a {
+            color: #000000; /* Black text for links */
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: #1a4314; /* Blue on hover */
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            font-size: 24px;
+        }
+        
+        .social-links a {
+            color: #1a4314; /* Blue for social icons */
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #000000; /* Black on hover */
+        }
+        
+        .newsletter form {
+            display: flex;
+            margin-top: 15px;
+        }
+        
+        .newsletter input {
+            padding: 8px;
+            border: 1px solid #1a4314; /* Blue border */
+            border-radius: 4px 0 0 4px;
+            flex: 1;
+        }
+        
+        .newsletter button {
+            background-color: #1a4314; /* Blue button */
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #1a4314; /* Blue border */
+            margin-top: 40px;
+            padding: 20px;
+        }
+        
+        .footer-bottom p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+        
+        .footer-bottom a {
+            color: #1a4314; /* Blue for footer links */
+            text-decoration: none;
+        }
+        </style>
+
+        
+<script>
+    const servicesCards = [
+    { id: 1, name: 'Web Development & Design', price: 123.45 },
+    { id: 2, name: 'Digital Marketing', price: 47 },
+    { id: 3, name: 'SEO Optimization', price: 77},
+    { id: 4, name: 'Social Media Management', price: 187 },
+    { id: 5, name: 'Content Writing', price: 11 },
+    { id: 6, name: 'Graphic Design', price: 234},
+    { id: 7, name: 'E-commerce Store Setup', price: 567 },
+    { id: 8, name: 'Mobile App Development', price: 678 },
+    { id: 9, name: 'Email Marketing', price: 123 },
+    { id: 10, name: 'PPC Advertising', price: 97 },
+    { id: 11, name: 'Logo Design', price: 44 },
+    { id: 12, name: 'UI/UX Design', price: 12 },
+    { id: 13, name: 'Video Editing', price: 123 },
+    { id: 14, name: 'Business Consulting', price: 910 },
+    { id: 15, name: 'CRM Setup & Integration', price: 1210 },
+]
+
+
+    let cart = [];
+    
+    function initializeServices() {
+        const grid = document.querySelector('.services-grid');
+        servicesCards.forEach(service => {
+            grid.innerHTML += `
+                <div class="service-card">
+                    <h3>${service.name}</h3>
+                    <small class="starting-from">Starting from</small>
+                    <div class="price">$${service.price}</div>
+                    <div class="card-buttons-container" style="display: flex; gap: 2px">
+                    <button class="add-to-cart" onclick="addToCart(${service.id})">Add to Cart</button>
+                    <button class="buy-now" onclick="buyNow(${service.id})">Buy Now</button>
+                    </div>
+                </div>
+            `;
+        });
+    }
+
+    function addToCart(serviceId) {
+        const service = servicesCards.find(s => s.id === serviceId);
+        cart.push(service);
+        updateCart();
+    }
+
+    function buyNow(serviceId) {
+        addToCart(serviceId);
+        toggleCart();
+    }
+
+    function updateCart() {
+        document.getElementById('cart-count').textContent = cart.length;
+        const cartItems = document.getElementById('cartItems');
+        const total = cart.reduce((sum, item) => sum + item.price, 0);
+        
+        cartItems.innerHTML = cart.map(item => `
+            <div class="cart-item">
+                <span>${item.name}</span>
+                <span>$${item.price}</span>
+            </div>
+        `).join('');
+        
+        document.getElementById('cartTotal').textContent = total;
+    }
+
+    function toggleCart() {
+        const modal = document.getElementById('cartModal');
+        modal.style.display = modal.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function checkout() {
+        window.location.href = 'https://example.com';
+        
+        cart = [];
+        updateCart();
+        toggleCart();
+    }
+
+    // Initialize services when page loads
+    window.onload = initializeServices;
+</script>
+
+<!-- Add this right before the closing </body> tag -->
+<script>
+
+    
+    function toggleCart() {
+        const modal = document.getElementById('cartModal');
+        modal.style.display = modal.style.display === 'block' ? 'none' : 'block';
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- Form Handling ---
+        const scriptURL = "https://script.google.com/macros/s/AKfycbxTGMgJ0wvGAsq7BaikEKj6CWYt_vXx2Ccerg0q6zo8dH3KBwlb7N0AoZoU528vUSQF/exec";
+        const form = document.getElementById("multiStepForm");
+        const nextBtn = document.getElementById("nextBtn");
+        const formContainer = document.querySelector(".card");
+        const successAnimation = document.getElementById("successAnimation");
+        const successMessage = document.getElementById("successMessage");
+        const fieldsets = form.querySelectorAll("fieldset");
+        let currentStep = 0;
+    
+        // Initialize form
+        function showStep(index) {
+            fieldsets.forEach((fieldset, i) => {
+                fieldset.style.display = i === index ? "block" : "none";
+                fieldset.classList.toggle("active", i === index);
+            });
+            
+            // Update button text
+            nextBtn.innerHTML = index === fieldsets.length - 1 ? 
+                `<img src="img/arrow_upward_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24 (1).png" alt="Next">` : 
+                `<img src="img/arrow_upward_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24 (1).png" alt="Next">`;
+        }
+    
+        // Initial show
+        showStep(currentStep);
+    
+        // Next Button Handler
+        nextBtn.addEventListener("click", function() {
+            if (validateStep(currentStep)) {
+                if (currentStep < fieldsets.length - 1) {
+                    currentStep++;
+                    showStep(currentStep);
+                } else {
+                    submitForm();
+                }
+            }
+        });
+    
+        function validateStep(step) {
+            const inputs = fieldsets[step].querySelectorAll("input, textarea");
+            let isValid = true;
+    
+            // Special validation for step 2 (contact info)
+            if (step === 2) {
+                const emailInput = fieldsets[2].querySelector('input[name="email"]');
+                const phoneInput = fieldsets[2].querySelector('input[name="phone"]');
+                const email = emailInput.value.trim();
+                const phone = phoneInput.value.trim().replace(/\D/g, '');
+    
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    alert("Please provide a valid email address");
+                    return false;
+                }
+    
+                if (phone.length < 10) {
+                    alert("Please provide a valid phone number");
+                    return false;
+                }
+            }
+    
+            // General validation
+            inputs.forEach(input => {
+                if (input.required && !input.value.trim()) {
+                    isValid = false;
+                }
+            });
+    
+            if (!isValid) {
+                alert("Please fill out all required fields");
+                return false;
+            }
+            return true;
+        }
+    
+        function submitForm() {
+            nextBtn.innerHTML = `<div class="loader"></div>`;
+            
+            fetch(scriptURL, { method: "POST", body: new FormData(form) })
+                .then(response => {
+                    formContainer.style.display = "none";
+                    successAnimation.style.display = "block";
+                    successMessage.style.display = "block";
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    alert("Error submitting form. Please try again.");
+                    nextBtn.innerHTML = "Try Again";
+                });
+        }
+    });
+    
+    // Initialize other components
+    window.onload = function() {
+        initializeServices();
+        // Add other initialization code here
+    };
+    </script>
+    
+    <!-- Add this CSS to your styles -->
+    <style>
+    .loader {
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid #3498db;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        animation: spin 1s linear infinite;
+        margin: 0 auto;
+    }
+    
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    
+    fieldset {
+        display: none;
+    }
+    
+    fieldset.active {
+        display: block;
+    }
+    </style>
+</body>
+</html>

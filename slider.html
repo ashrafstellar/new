@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .ticker-container {
+            width: 100%;
+            overflow: hidden;
+            background: #000;
+            color: #fff;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            white-space: nowrap;
+        }
+
+        .ticker-content {
+            display: inline-block;
+            animation: scroll 20s linear infinite;
+            padding-left: 100%;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ticker-container">
+        <div class="ticker-content">
+            BREAKING NEWS: This is an infinite scrolling text banner. The content will keep scrolling horizontally like a news ticker. You can add any text content here. 
+        </div>
+    </div>
+
+    <script>
+        // Clone the content to create seamless loop
+        window.addEventListener('DOMContentLoaded', () => {
+            const tickerContent = document.querySelector('.ticker-content');
+            const contentClone = tickerContent.cloneNode(true);
+            tickerContent.parentNode.appendChild(contentClone);
+        });
+    </script>
+</body>
+</html>

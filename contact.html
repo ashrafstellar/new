@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Stellar Digi Tech</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+        }
+
+        .contact-header {
+            background-color: #1a237e;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            padding-top: 8em;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .info-section {
+            margin-bottom: 2rem;
+        }
+
+        .info-section h3 {
+            color: #1a237e;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: #1a237e;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #3949ab;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 0.5rem;
+        }
+
+        button {
+            background-color: #1a237e;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #3949ab;
+        }
+
+        .map-container {
+            margin-top: 2rem;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <style>
+        .sticky-header {
+      position: fixed;
+      top: 10px; /* Keeps the header 10px below the top */
+      left: 50%; /* Centers the header horizontally */
+      transform: translateX(-50%); /* Adjusts the position to truly center the header */
+      width: 80%; /* Makes the header 80% of the width of the viewport */
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      backdrop-filter: blur(5px);
+      background: rgba(255, 255, 255, 0.8); /* Slightly transparent for visibility */
+      border-radius: 12px; /* Adds rounded corners */
+      border-bottom: 2px solid #ddd; /* Optional: Adds a subtle border under the header */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000; /* Ensure it stays on top of other content */
+      height: 62px;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #3a3a3a;
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+    
+    nav ul li a {
+      text-decoration: none;
+      color: #3a3a3a;
+      font-weight: 500;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .cta {
+      background-color: #d4f50b;
+      color: #3a3a3a;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    
+    .cart-icon {
+      font-size: 1.5rem;
+      color: #3a3a3a;
+    }
+    
+    
+    
+          /* Hamburger menu button */
+          .hamburger-menu {
+            display: none;
+            font-size: 2rem;
+            color: #3a3a3a;
+            cursor: pointer;
+          }
+          
+          /* Overlay menu */
+          .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.8);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transform: translateX(-100%);
+            transition: transform 0.4s ease;
+            z-index: 1000;
+          }
+          
+          .menu-overlay ul {
+            list-style: none;
+            text-align: center;
+          }
+          
+          .menu-overlay ul li {
+            margin: 1rem 0;
+          }
+          
+          .menu-overlay ul li a {
+            text-decoration: none;
+            font-size: 1.5rem;
+            color: #3a3a3a;
+          }
+          
+          /* Close button inside the overlay */
+          .close-btn {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #3a3a3a;
+          }
+          
+          /* Show hamburger menu on smaller screens */
+          @media (max-width: 768px) {
+    
+            .sticky-header{width: 90%;
+            height: auto;}
+    
+            nav ul {
+              display: none;
+            }
+            .cta-buttons {
+              display: none;
+            }
+            .hamburger-menu {
+              display: block;
+              margin: auto 0;
+            }
+          }
+          
+          /* Active class to open the overlay */
+          .menu-overlay.open {
+            transform: translateX(0);
+          }
+          
+          .schedule-meeting {
+            border-radius: 8px;
+            background-color: #E9FF62; /* Darker background */
+            color: black;
+            transition: background-color 0.3s ease;
+            padding: 5px 24px;
+            padding-top: 0;
+            text-decoration: none;
+          }
+          
+          .schedule-meeting:hover {
+            background-color: #000; /* Slightly lighter shade on hover */
+            color: #fff;
+          }
+          
+          .schedule-meeting svg {
+            transition: transform 0.3s ease;
+          }
+          
+          .schedule-meeting:hover svg {
+            transform: rotate(44deg);
+            fill: #fff;
+          }
+    
+          a{
+            text-decoration: none;
+          }
+    
+    </style>
+    
+    <header class="sticky-header">
+        <div class="logo"><a href="index.html" style="    font-size: 1.5rem; font-weight: bold; color: #3a3a3a;">Stellar</a></div>
+          <nav>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="projects.html">Projects</a></li>
+              <li><a href="blog.html">Blog</a></li>
+             
+              
+            </ul>
+          </nav>
+          <div class="cta-buttons">
+           
+            
+          </div>
+          <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
+      </header>
+      
+      <div class="menu-overlay" id="menuOverlay">
+        <button class="close-btn" onclick="toggleMenu()">✕</button>
+        <ul>
+          <li><a href="#">Home</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="projects.html">Projects</a></li>
+              <li><a href="blog.html">Blog</a></li>
+         
+        
+          
+        </ul>
+      </div>
+      <script defer>function toggleMenu() {
+        const menuOverlay = document.getElementById('menuOverlay');
+        menuOverlay.classList.toggle('open');
+      }
+      </script>
+
+    <div class="contact-header">
+        <h1>Contact Stellar Digi Tech</h1>
+        <p>We're here to help and answer any questions you might have</p>
+    </div>
+
+    <div class="contact-container">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="info-section">
+                    <h3><i class="fas fa-map-marker-alt"></i> Headquarters</h3>
+                    <p>314 JSR IND 831-001</p>
+                </div>
+
+                <div class="info-section">
+                    <h3><i class="fas fa-phone"></i> Contact Numbers</h3>
+                    <p>+1 8 3333 1111 8</p>
+                </div>
+
+                <div class="info-section">
+                    <h3><i class="fas fa-envelope"></i> Email</h3>
+                    <p>hello@stellardigitech.com</p>
+                </div>
+
+                <div class="info-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="6" required></textarea>
+                    </div>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317715.711916995!2d-0.38178294591091996!3d51.528735198054996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2sus!4v162987654321!5m2!1sen!2sus" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy"></iframe>
+        </div>
+
+        <div class="additional-info">
+            <h3>Office Hours</h3>
+            <p>Monday-Friday: 9:00 AM - 8:00 PM EST<br>
+            Saturday: 10:00 AM - 6:00 PM EST<br>
+            Sunday: Closed</p>
+
+           
+            <h3>FAQs</h3>
+            <p>Visit our <a href="#">Knowledge Base</a> for instant answers to common questions.</p>
+        </div>
+    </div>
+
+    
+<style>
+    
+    /* faq styles start*/
+
+    .faq-heading {
+        text-align: center;
+        font-size: 2em;
+        color: #333333;
+        margin-bottom: 20px;
+      }
+
+      .faq-section{
+        display: flex;
+        justify-content: space-between;
+
+      }
+
+      .faq-img-container {
+        display: flex;
+        justify-content: center;  /* Centers the image horizontally */
+        align-items: center;      /* Centers the image vertically */
+        height: auto;            /* Set a fixed height for the container, or adjust as needed */
+        width: 100%  ;
+        overflow: hidden;            /* Full width */
+      }
+      
+      .faq-img-container img {
+        max-width: 140%;          /* Ensures the image does not exceed the container's width */
+        max-height: 100%;         /* Ensures the image does not exceed the container's height */
+        object-fit: contain;      /* Ensures the image maintains its aspect ratio without stretching */
+      }
+      
+      
+
+
+      .faq-container {
+        width: 85%;
+        max-width: 960px;
+        display: flex
+;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px;
+    padding: 30px;
+      }
+
+      .faq-item {
+        border: 1px solid #000;
+        border-radius: 10px;
+        margin: 10px 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        
+      }
+
+      .faq-question {
+        padding: 14px 20px;
+        cursor: pointer;
+        color: #000;
+        display: flex
+    ;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1em;
+      }
+
+      .faq-answer {
+        max-height: 0;
+        padding: 0 20px;
+        overflow: hidden;
+        background-color: #ffffff;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+        color: #333;
+        font-size: 1em;
+        border-radius: 0 0 10px 10px;
+      }
+
+      .faq-answer p {
+        margin: 20px 0;
+      }
+
+      .faq-item.active .faq-answer {
+        max-height: 280px;
+        padding: 0px 20px;
+        
+      }
+
+      .faq-item.active{
+        border: 2px solid #000;
+        box-shadow: 6px 6px 0px 0px black; /* Extra black border effect */
+      }
+
+      .faq-item.active .faq-question {
+        color: #000;
+        font-weight: 500;
+        
+        
+      }
+
+      
+
+      .faq-item.active .faq-question::after {
+        content: '-';
+       
+      }
+
+      .faq-question::after {
+        content: '+';
+        font-size: 1.5em;
+        color: #000;
+      }
+
+      /* For screens smaller than 1200px (laptops) */
+@media (max-width: 1200px) {
+  .faq-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .faq-container {
+    width: 80%;
+  }
+}
+
+/* For screens smaller than 768px (tablets and smaller laptops) */
+@media (max-width: 768px) {
+  .faq-section {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .faq-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .faq-item {
+    margin: 8px 0;
+  }
+
+  .faq-img-container img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* For screens smaller than 480px (smartphones) */
+@media (max-width: 480px) {
+  .faq-heading {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+
+  .faq-container {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .faq-item {
+    margin: 5px 0;
+  }
+
+  .faq-question {
+    font-size: 0.9em;
+  }
+
+  .faq-answer p {
+    font-size: 0.9em;
+  }
+}
+
+      /* faq styles end */
+</style>
+<section class="faq-section" style="margin: 0 auto;">
+  <div class="faq-container">
+    <h1 class="faq-heading" id="smooth-up-animate">Frequently Asked Questions</h1>
+
+    <div class="faq-item active" id="smooth-up-animate">
+      <div class="faq-question">What services does Stellar Digi Tech offer?</div>
+      <div class="faq-answer">
+        <p>We specialize in cutting-edge web development and comprehensive digital marketing. Our offerings include custom website design, development, SEO, pay-per-click advertising, social media management, and content strategy—designed to help your business thrive online.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" id="smooth-up-animate">
+      <div class="faq-question">What does unlimited support include?</div>
+      <div class="faq-answer">
+        <p>Unlimited support means you can request as many website updates or tweaks as needed during your support period. For our Starter plan, you get one month of free support, while our Business plan includes three months. After that, you can easily purchase an additional support package to keep your site up-to-date.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" id="smooth-up-animate">
+      <div class="faq-question">How does the website development process work?</div>
+      <div class="faq-answer">
+        <p>We start with a detailed consultation to understand your business goals and vision. Then we move through the design, development, and testing phases—ensuring you’re involved every step of the way. This collaborative process guarantees a website that truly represents your brand.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" id="smooth-up-animate">
+      <div class="faq-question">Will my website be optimized for search engines?</div>
+      <div class="faq-answer">
+        <p>Absolutely. All our websites come with on-page SEO essentials to ensure search engines can index your site properly. For those seeking a competitive edge, we offer advanced SEO and digital marketing packages designed to boost your online visibility.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" id="smooth-up-animate">
+      <div class="faq-question">How long does it take to build a website?</div>
+      <div class="faq-answer">
+        <p>Depending on your project’s complexity, our website development typically takes between 2 to 6 weeks. More intricate projects might require a longer timeline, but we always strive to deliver quality work on schedule.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" id="smooth-up-animate">
+      <div class="faq-question">How do I get started with Stellar Digi Tech?</div>
+      <div class="faq-answer">
+        <p>Getting started is simple! Contact us by calling <strong>+1 8 3333 1111 8</strong> or by filling out the contact form on our website. Our team will schedule a consultation to discuss your project requirements and guide you through the next steps.</p>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', () => {
+            const faqItem = question.parentElement;
+            
+            // Toggle active class on clicked item
+            faqItem.classList.toggle('active');
+            
+            // Close other open items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== faqItem) {
+                    item.classList.remove('active');
+                }
+            });
+        });
+    });
+</script>
+
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Stellar Digital Tech</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-phone"></i> +1 8 3333 1111 8</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 314 JSR IND 831-001</p>
+                    <p><i class="fas fa-envelope"></i> hello@stellardigitech.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/careers">Careers</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="newsletter">
+                    <p>Subscribe to our newsletter</p>
+                    <form>
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2024 Stellar Digital Tech. All rights reserved. | <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a></p>
+        </div>
+    </footer>
+    
+    <style>
+    .site-footer {
+        background-color: #ffffff; /* White background */
+        color: #000000; /* Black text */
+        padding: 40px 0 20px;
+        margin-top: 50px;
+    }
+    
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        padding: 0 20px;
+    }
+    
+    .footer-section h3, .footer-section h4 {
+        color: #1a237e; /* Blue for headers */
+        margin-bottom: 20px;
+    }
+    
+    .contact-info p {
+        margin: 10px 0;
+        display: flex;
+        align-items: center;
+    }
+    
+    .contact-info i {
+        margin-right: 10px;
+        color: #1a237e; /* Blue for icons */
+    }
+    
+    .footer-links {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .footer-links li {
+        margin: 10px 0;
+    }
+    
+    .footer-links a {
+        color: #000000; /* Black text for links */
+        text-decoration: none;
+    }
+    
+    .footer-links a:hover {
+        color: #1a237e; /* Blue on hover */
+    }
+    
+    .social-links {
+        display: flex;
+        gap: 15px;
+        font-size: 24px;
+    }
+    
+    .social-links a {
+        color: #1a237e; /* Blue for social icons */
+        transition: color 0.3s;
+    }
+    
+    .social-links a:hover {
+        color: #000000; /* Black on hover */
+    }
+    
+    .newsletter form {
+        display: flex;
+        margin-top: 15px;
+    }
+    
+    .newsletter input {
+        padding: 8px;
+        border: 1px solid #1a237e; /* Blue border */
+        border-radius: 4px 0 0 4px;
+        flex: 1;
+    }
+    
+    .newsletter button {
+        background-color: #1a237e; /* Blue button */
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 0 4px 4px 0;
+        cursor: pointer;
+    }
+    
+    .footer-bottom {
+        text-align: center;
+        border-top: 1px solid #1a237e; /* Blue border */
+        margin-top: 40px;
+        padding: 20px;
+    }
+    
+    .footer-bottom p {
+        margin: 0;
+        font-size: 0.9em;
+    }
+    
+    .footer-bottom a {
+        color: #1a237e; /* Blue for footer links */
+        text-decoration: none;
+    }
+    </style>
+    
+</body>
+</html>

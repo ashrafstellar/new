@@ -1,0 +1,242 @@
+
+<style>
+    
+    /* faq styles start*/
+
+    .faq-heading {
+        text-align: center;
+        font-size: 2em;
+        color: #333333;
+        margin-bottom: 20px;
+      }
+
+      .faq-section{
+        display: flex;
+        justify-content: space-between;
+
+      }
+
+      .faq-img-container {
+        display: flex;
+        justify-content: center;  /* Centers the image horizontally */
+        align-items: center;      /* Centers the image vertically */
+        height: auto;            /* Set a fixed height for the container, or adjust as needed */
+        width: 100%  ;
+        overflow: hidden;            /* Full width */
+      }
+      
+      .faq-img-container img {
+        max-width: 140%;          /* Ensures the image does not exceed the container's width */
+        max-height: 100%;         /* Ensures the image does not exceed the container's height */
+        object-fit: contain;      /* Ensures the image maintains its aspect ratio without stretching */
+      }
+      
+      
+
+
+      .faq-container {
+        width: 85%;
+        max-width: 960px;
+        display: flex
+;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px;
+    padding: 30px;
+      }
+
+      .faq-item {
+        border: 1px solid #000;
+        border-radius: 10px;
+        margin: 10px 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        
+      }
+
+      .faq-question {
+        padding: 14px 20px;
+        cursor: pointer;
+        color: #000;
+        display: flex
+    ;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1em;
+      }
+
+      .faq-answer {
+        max-height: 0;
+        padding: 0 20px;
+        overflow: hidden;
+        background-color: #ffffff;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+        color: #333;
+        font-size: 1em;
+        border-radius: 0 0 10px 10px;
+      }
+
+      .faq-answer p {
+        margin: 20px 0;
+      }
+
+      .faq-item.active .faq-answer {
+        max-height: 280px;
+        padding: 0px 20px;
+        
+      }
+
+      .faq-item.active{
+        border: 2px solid #000;
+        box-shadow: 6px 6px 0px 0px black; /* Extra black border effect */
+      }
+
+      .faq-item.active .faq-question {
+        color: #000;
+        font-weight: 500;
+        
+        
+      }
+
+      
+
+      .faq-item.active .faq-question::after {
+        content: '-';
+       
+      }
+
+      .faq-question::after {
+        content: '+';
+        font-size: 1.5em;
+        color: #000;
+      }
+
+      /* For screens smaller than 1200px (laptops) */
+@media (max-width: 1200px) {
+  .faq-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .faq-container {
+    width: 80%;
+  }
+}
+
+/* For screens smaller than 768px (tablets and smaller laptops) */
+@media (max-width: 768px) {
+  .faq-section {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .faq-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .faq-item {
+    margin: 8px 0;
+  }
+
+  .faq-img-container img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* For screens smaller than 480px (smartphones) */
+@media (max-width: 480px) {
+  .faq-heading {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+
+  .faq-container {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .faq-item {
+    margin: 5px 0;
+  }
+
+  .faq-question {
+    font-size: 0.9em;
+  }
+
+  .faq-answer p {
+    font-size: 0.9em;
+  }
+}
+
+      /* faq styles end */
+</style>
+<section class="faq-section" style="margin: 0 auto;">
+  <div class="faq-container">
+    <h1 class="faq-heading" id="smooth-up-animate">Frequently Asked Questions</h1>
+
+    <div class="faq-item active" id="smooth-up-animate">
+      <div class="faq-question">What services does Stellar Digi Tech offer?</div>
+      <div class="faq-answer">
+        <p>We specialize in cutting-edge web development and comprehensive digital marketing. Our offerings include custom website design, development, SEO, pay-per-click advertising, social media management, and content strategy—designed to help your business thrive online.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" id="smooth-up-animate">
+      <div class="faq-question">What does unlimited support include?</div>
+      <div class="faq-answer">
+        <p>Unlimited support means you can request as many website updates or tweaks as needed during your support period. For our Starter plan, you get one month of free support, while our Business plan includes three months. After that, you can easily purchase an additional support package to keep your site up-to-date.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" id="smooth-up-animate">
+      <div class="faq-question">How does the website development process work?</div>
+      <div class="faq-answer">
+        <p>We start with a detailed consultation to understand your business goals and vision. Then we move through the design, development, and testing phases—ensuring you’re involved every step of the way. This collaborative process guarantees a website that truly represents your brand.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" id="smooth-up-animate">
+      <div class="faq-question">Will my website be optimized for search engines?</div>
+      <div class="faq-answer">
+        <p>Absolutely. All our websites come with on-page SEO essentials to ensure search engines can index your site properly. For those seeking a competitive edge, we offer advanced SEO and digital marketing packages designed to boost your online visibility.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" id="smooth-up-animate">
+      <div class="faq-question">How long does it take to build a website?</div>
+      <div class="faq-answer">
+        <p>Depending on your project’s complexity, our website development typically takes between 2 to 6 weeks. More intricate projects might require a longer timeline, but we always strive to deliver quality work on schedule.</p>
+      </div>
+    </div>
+
+    <div class="faq-item" id="smooth-up-animate">
+      <div class="faq-question">How do I get started with Stellar Digi Tech?</div>
+      <div class="faq-answer">
+        <p>Getting started is simple! Contact us by calling <strong>+1 8 3333 1111 8</strong> or by filling out the contact form on our website. Our team will schedule a consultation to discuss your project requirements and guide you through the next steps.</p>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', () => {
+            const faqItem = question.parentElement;
+            
+            // Toggle active class on clicked item
+            faqItem.classList.toggle('active');
+            
+            // Close other open items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== faqItem) {
+                    item.classList.remove('active');
+                }
+            });
+        });
+    });
+</script>
